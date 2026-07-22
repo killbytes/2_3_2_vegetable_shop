@@ -1,6 +1,6 @@
 /// <reference types="vitest" />
 // позволяет TypeScript получить корректную типизацию для Vitest
-import { defineConfig } from 'vite'
+import { defineConfig } from 'vitest/config';
 import react from '@vitejs/plugin-react'
 
 // https://vite.dev/config/
