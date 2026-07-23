@@ -7,7 +7,7 @@ const Cart = () => {
     return (
         <Popup>
             <Button
-                leftSection={<IconShoppingCart size={18} />}
+                rightSection={<IconShoppingCart size={18} />}
                 color="green"
             >
                 Cart
