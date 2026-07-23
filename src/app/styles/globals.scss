@@ -52,26 +52,3 @@ code {
   padding: 4px 8px;
   background: var(--code-bg);
 }
-
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-.my-container-title {
-
-}
-
-.card1 {
-  background: #aa3bff;
-  padding: 20px;
-
-  &__title {
-    background: #3bff55;
-  }
-  &__description {
-    background: #ff3b93;
-  }
-}
