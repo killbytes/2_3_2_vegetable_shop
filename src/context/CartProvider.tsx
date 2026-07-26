@@ -3,13 +3,15 @@ import { CartContext } from "./CartContext";
 import type { ReactNode } from "react";
 import type { Product } from "@/shared/types/Product";
 import type { CartItem } from "@/shared/types/CartItem";
+import { useLocalStorage } from "@/hooks/useLocalStorage";
 
 type CartProviderProps = {
     children: ReactNode;
 };
 
 export default function CartProvider({children}: CartProviderProps) {
-    const [cartItems, setCartItems] = useState<CartItem[]>([]);
+    // const [cartItems, setCartItems] = useState<CartItem[]>([]);
+    const [cartItems, setCartItems] = useLocalStorage<CartItem[]>("cart", []);
 
     const addToCart = (
         product: Product,
