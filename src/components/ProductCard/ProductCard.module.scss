@@ -7,3 +7,12 @@
   transform: translateY(-4px);
   box-shadow: 0 10px 24px rgb(0 0 0 / 12%);
 }
+
+.card img {
+  object-fit: cover;
+}
+
+.name {
+  min-height: 48px;
+}
+

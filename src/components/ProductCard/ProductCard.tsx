@@ -3,6 +3,7 @@ import {Button, Card, Group, Image, Text, ActionIcon,} from "@mantine/core";
 import {IconMinus, IconPlus} from "@tabler/icons-react";
 import type {Product} from "@/shared/types/Product";
 import styles from "./ProductCard.module.scss";
+import { useCart } from "@/context/useCart";
 
 type ProductCardProps = {
     product: Product;
@@ -12,6 +13,7 @@ const ProductCard = ({product}: ProductCardProps) => {
     const [count, setCount] = useState(1);
     const increase = () => setCount((prev) => prev + 1);
     const decrease = () => setCount((prev) => (prev > 1 ? prev - 1 : 1));
+    const { addToCart } = useCart();
     return (
         <Card
             shadow="sm"
@@ -28,6 +30,7 @@ const ProductCard = ({product}: ProductCardProps) => {
             <Text
                 fw={600}
                 mt="md"
+                className={styles.name}
             >
                 {product.name}
             </Text>
@@ -73,6 +76,7 @@ const ProductCard = ({product}: ProductCardProps) => {
                 mt="lg"
                 color="#E7FAEB"
                 c="#3B944E"
+                onClick={() => addToCart(product, count)}
             >
                 Add to cart
             </Button>
