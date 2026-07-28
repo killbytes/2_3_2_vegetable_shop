@@ -6,6 +6,7 @@ import path from "path"
 
 // https://vite.dev/config/
 export default defineConfig({
+  base: '/2_3_2_vegetable_shop/',
   plugins: [react()],
   resolve: {
     alias: {
