@@ -1,4 +1,4 @@
-import {ActionIcon, Group, Image, Stack, Text} from "@mantine/core";
+import {ActionIcon, Divider, Group, Image, Stack, Text} from "@mantine/core";
 import {IconMinus, IconPlus, IconTrash} from "@tabler/icons-react";
 import { useCart } from "@/context/useCart";
 import type { CartItem as CartItemType } from "@/shared/types";
@@ -10,74 +10,69 @@ type CartItemProps = {
 
 const CartItem = ({ item }: CartItemProps) => {
     const {increaseQuantity, decreaseQuantity, removeFromCart} = useCart();
-
     const {
         product,
         quantity,
     } = item;
+    const title = product.name;
+    const [name, weight] = title.split(" - ");
 
     return (
         <div className={styles.item}>
-            <Image
-                src={product.image}
-                w={70}
-                h={70}
-                radius="md"
-            />
 
-            <Stack
-                gap={4}
-                className={styles.info}
-            >
-                <Text fw={600}>
-                    {product.name}
-                </Text>
+            <Stack gap="md">
+                {/* Товар */}
+                <Group wrap="nowrap" justify="space-between">
+                    <Group gap="sm" wrap="nowrap">
+                        <Image
+                            src={product.image}
+                            alt="Tomato"
+                            w={64}
+                            h={64}
+                            fit="contain"
+                        />
 
-                <Text
-                    size="sm"
-                    c="dimmed"
-                >
-                    ${product.price}
-                </Text>
+                        <div>
+                            <Group gap={8} align="center">
+                                <Text fw={700} size="xs">
+                                    {name}
+                                </Text>
+                                <Text c="dimmed" size="xs">
+                                    {weight}
+                                </Text>
+                            </Group>
+                            <Text fw={700} size="xs">
+                                ${product.price}
+                            </Text>
+                        </div>
+                    </Group>
 
-                <Group gap="xs">
-                    <ActionIcon
-                        variant="light"
-                        onClick={() =>
-                            decreaseQuantity(product.id)
-                        }
-                    >
-                        <IconMinus size={16} />
-                    </ActionIcon>
+                    <Group gap="sm" wrap="nowrap" style={{ flex: 1 }} justify={"flex-end"} >
+                        <ActionIcon
+                            variant="light"
+                            color="gray"
+                            onClick={() =>
+                                decreaseQuantity(product.id)
+                            }
+                        >
+                            <IconMinus size={18} />
+                        </ActionIcon>
 
-                    <Text
-                        fw={600}
-                        w={20}
-                        ta="center"
-                    >
-                        {quantity}
-                    </Text>
+                        <Text size="xl">1</Text>
 
-                    <ActionIcon
-                        variant="light"
-                        onClick={() =>
-                            increaseQuantity(product.id)
-                        }
-                    >
-                        <IconPlus size={16} />
-                    </ActionIcon>
+                        <ActionIcon
+                            variant="light"
+                            color="gray"
+                            onClick={() =>
+                                increaseQuantity(product.id)
+                            }
+                        >
+                            <IconPlus size={18} />
+                        </ActionIcon>
+                    </Group>
                 </Group>
+                <Divider ml={80} />
             </Stack>
-
-            <ActionIcon
-                color="red"
-                variant="subtle"
-                onClick={() =>
-                    removeFromCart(product.id)
-                }
-            >
-                <IconTrash size={18} />
-            </ActionIcon>
         </div>
     );
 };
