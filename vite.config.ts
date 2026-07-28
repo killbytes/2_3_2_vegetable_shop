@@ -15,5 +15,8 @@ export default defineConfig({
   test: {
     globals: true, // Включает глобальные функции из Vitest
     environment: 'jsdom', // Устанавливает окружение для тестов как 'jsdom', имитирующую браузер
+    setupFiles: [
+      "./src/test/setup.ts",
+    ],
   },
 })
