@@ -5,17 +5,11 @@ import type { Product } from "@/shared/types/Product";
 
 export interface CartContextType {
     cartItems: CartItem[];
-
     totalPrice: number;
-
     totalQuantity: number;
-
     addToCart: (product: Product, quantity: number) => void;
-
     increaseQuantity: (productId: number) => void;
-
     decreaseQuantity: (productId: number) => void;
-
     removeFromCart: (productId: number) => void;
 }
 
