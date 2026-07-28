@@ -1,15 +1,24 @@
+import {Container, Title} from "@mantine/core";
 import Header from "@/components/Header/Header";
 import ProductList from "@/components/ProductList/ProductList";
-import styles from "./Layout.module.scss";
 
 const Layout = () => {
     return (
         <>
             <Header />
-            <main className={styles.main}>
-                <h1>Catalog</h1>
-                <ProductList />
-            </main>
+                <Container size="1280">
+                    <Title
+                        order={1}
+                        style={{
+                            textAlign: "left",
+                            color: "#000000",
+                            marginBottom: "49px",
+                            marginTop: "60px",
+                            fontWeight: 600
+                        }}
+                    >Catalog</Title>
+                    <ProductList />
+                </Container>
         </>
     );
 };

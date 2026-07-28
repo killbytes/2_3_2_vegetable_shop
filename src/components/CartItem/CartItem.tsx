@@ -1,20 +1,7 @@
-import {
-    ActionIcon,
-    Group,
-    Image,
-    Stack,
-    Text,
-} from "@mantine/core";
-import {
-    IconMinus,
-    IconPlus,
-    IconTrash,
-} from "@tabler/icons-react";
-
+import {ActionIcon, Group, Image, Stack, Text} from "@mantine/core";
+import {IconMinus, IconPlus, IconTrash} from "@tabler/icons-react";
 import { useCart } from "@/context/useCart";
-
 import type { CartItem as CartItemType } from "@/shared/types";
-
 import styles from "./CartItem.module.scss";
 
 type CartItemProps = {
@@ -22,11 +9,7 @@ type CartItemProps = {
 };
 
 const CartItem = ({ item }: CartItemProps) => {
-    const {
-        increaseQuantity,
-        decreaseQuantity,
-        removeFromCart,
-    } = useCart();
+    const {increaseQuantity, decreaseQuantity, removeFromCart} = useCart();
 
     const {
         product,

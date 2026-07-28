@@ -9,6 +9,6 @@ export async function getProducts(): Promise<Product[]> {
         throw new Error("Failed to load products");
     }
     const result: Product[] = await response.json();
-    await new Promise((resolve) => setTimeout(resolve, 5000)); // иммитация 3g
+    await new Promise((resolve) => setTimeout(resolve, 2000)); // immitation 3g
     return result;
 }
