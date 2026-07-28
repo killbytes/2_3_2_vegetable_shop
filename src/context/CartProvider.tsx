@@ -1,4 +1,3 @@
-import { useMemo, useState } from "react";
 import { CartContext } from "./CartContext";
 import type { ReactNode } from "react";
 import type { Product } from "@/shared/types/Product";
@@ -10,7 +9,6 @@ type CartProviderProps = {
 };
 
 export default function CartProvider({children}: CartProviderProps) {
-    // const [cartItems, setCartItems] = useState<CartItem[]>([]);
     const [cartItems, setCartItems] = useLocalStorage<CartItem[]>("cart", []);
 
     const addToCart = (

@@ -1,5 +1,5 @@
 import {ActionIcon, Divider, Group, Image, Stack, Text} from "@mantine/core";
-import {IconMinus, IconPlus, IconTrash} from "@tabler/icons-react";
+import {IconMinus, IconPlus} from "@tabler/icons-react";
 import { useCart } from "@/context/useCart";
 import type { CartItem as CartItemType } from "@/shared/types";
 import styles from "./CartItem.module.scss";
@@ -9,11 +9,8 @@ type CartItemProps = {
 };
 
 const CartItem = ({ item }: CartItemProps) => {
-    const {increaseQuantity, decreaseQuantity, removeFromCart} = useCart();
-    const {
-        product,
-        quantity,
-    } = item;
+    const {increaseQuantity, decreaseQuantity} = useCart();
+    const {product} = item;
     const title = product.name;
     const [name, weight] = title.split(" - ");
 
