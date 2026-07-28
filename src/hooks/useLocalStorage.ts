@@ -6,7 +6,10 @@ export function useLocalStorage<T>(
     initialValue: T
 ): [T, Dispatch<SetStateAction<T>>] {
     const [value, setValue] = useState<T>(() => {
-        const savedValue = localStorage.getItem(key);
+        if (typeof window === "undefined") {
+            return initialValue;
+        }
+        const savedValue = window.localStorage.getItem(key);
 
         if (!savedValue) {
             return initialValue;
@@ -20,6 +23,9 @@ export function useLocalStorage<T>(
     });
 
     useEffect(() => {
+        if (typeof window === "undefined") {
+            return;
+        }
         localStorage.setItem(key, JSON.stringify(value));
     }, [key, value]);
 

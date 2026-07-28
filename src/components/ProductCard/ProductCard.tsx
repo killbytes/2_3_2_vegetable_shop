@@ -47,6 +47,7 @@ const ProductCard = ({product}: ProductCardProps) => {
                     </Group>
                     <Group gap={8}>
                         <ActionIcon
+                            aria-label="decrease quantity"
                             variant="light"
                             radius="md"
                             color="gray"
@@ -58,6 +59,7 @@ const ProductCard = ({product}: ProductCardProps) => {
                             {count}
                         </Text>
                         <ActionIcon
+                            aria-label="increase quantity"
                             onClick={increase}
                             variant="light"
                             radius="md"
