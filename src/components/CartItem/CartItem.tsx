@@ -10,7 +10,7 @@ type CartItemProps = {
 
 const CartItem = ({ item }: CartItemProps) => {
     const {increaseQuantity, decreaseQuantity} = useCart();
-    const {product} = item;
+    const {product, quantity} = item;
     const title = product.name;
     const [name, weight] = title.split(" - ");
 
@@ -55,7 +55,7 @@ const CartItem = ({ item }: CartItemProps) => {
                             <IconMinus size={18} />
                         </ActionIcon>
 
-                        <Text size="xl">1</Text>
+                        <Text size="xl">{quantity}</Text>
 
                         <ActionIcon
                             variant="light"
