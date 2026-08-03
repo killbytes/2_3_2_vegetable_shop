@@ -1,5 +1,5 @@
 import {Group, Image, Stack, Text} from "@mantine/core";
-import { useCart } from "@/context/useCart";
+import {useCart} from "@/context/useCart";
 import CartItem from "@/components/CartItem/CartItem";
 import cartEmpty from '../../shared/assets/cart_empty.png';
 
@@ -19,7 +19,7 @@ const CartPopup = () => {
                     h={106}
                     fit="contain"
                 />
-                <Text ta="center" style={{color:"#868E96"}} >
+                <Text ta="center" style={{color: "#868E96"}}>
                     You cart is empty!
                 </Text>
             </Stack>

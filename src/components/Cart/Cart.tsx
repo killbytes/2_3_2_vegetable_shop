@@ -1,8 +1,8 @@
-import { Button } from "@mantine/core";
-import { IconShoppingCart } from "@tabler/icons-react";
+import {Button} from "@mantine/core";
+import {IconShoppingCart} from "@tabler/icons-react";
 import Popup from "@/components/Popup/Popup";
 import CartPopup from "@/components/CartPopup/CartPopup";
-import { useCart } from "@/context/useCart";
+import {useCart} from "@/context/useCart";
 import styles from "./Cart.module.scss";
 
 const Cart = () => {
@@ -12,10 +12,10 @@ const Cart = () => {
 
     console.log(totalQuantity)
     return (
-        <Popup content={<CartPopup />}>
+        <Popup content={<CartPopup/>}>
             <Button
                 color="green"
-                rightSection={<IconShoppingCart size={18} />}
+                rightSection={<IconShoppingCart size={18}/>}
             >
                 {totalQuantity === 0 ? (
                     "Cart"

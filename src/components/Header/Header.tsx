@@ -1,4 +1,4 @@
-import { Group, Badge } from "@mantine/core";
+import {Group, Badge} from "@mantine/core";
 import Cart from "@/components/Cart/Cart";
 import styles from "./Header.module.scss";
 
@@ -7,11 +7,11 @@ const Header = () => {
         <header className={styles.header}>
             <div className={styles.wrapper}>
                 <Group gap="xs"
-                    style={{
-                        background: "#F7F7F7",
-                        borderRadius: "16px",
-                        padding: "0px 0px 0px 8px"
-                    }}
+                       style={{
+                           background: "#F7F7F7",
+                           borderRadius: "16px",
+                           padding: "0px 0px 0px 8px"
+                       }}
                 >
                     <h2 className={styles.logo}>Vegetable</h2>
                     <Badge
@@ -22,7 +22,7 @@ const Header = () => {
                         SHOP
                     </Badge>
                 </Group>
-                <Cart />
+                <Cart/>
             </div>
         </header>
     );

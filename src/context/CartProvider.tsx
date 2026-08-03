@@ -1,8 +1,8 @@
-import { CartContext } from "./CartContext";
-import type { ReactNode } from "react";
-import type { Product } from "@/shared/types/Product";
-import type { CartItem } from "@/shared/types/CartItem";
-import { useLocalStorage } from "@/hooks/useLocalStorage";
+import {CartContext} from "./CartContext";
+import type {ReactNode} from "react";
+import type {Product} from "../shared/types/Product";
+import type {CartItem} from "@/shared/types/CartItem";
+import {useLocalStorage} from "@/hooks/useLocalStorage";
 
 type CartProviderProps = {
     children: ReactNode;
@@ -42,7 +42,7 @@ export default function CartProvider({children}: CartProviderProps) {
     const decreaseQuantity = (productId: number) => {
         setCartItems((prev) =>
             prev.map((item) =>
-                    item.product.id === productId ? {...item, quantity: item.quantity - 1} : item)
+                item.product.id === productId ? {...item, quantity: item.quantity - 1} : item)
                 .filter((item) => item.quantity > 0)
         );
     };

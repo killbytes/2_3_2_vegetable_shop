@@ -1,14 +1,14 @@
 import {ActionIcon, Divider, Group, Image, Stack, Text} from "@mantine/core";
 import {IconMinus, IconPlus} from "@tabler/icons-react";
-import { useCart } from "@/context/useCart";
-import type { CartItem as CartItemType } from "@/shared/types";
+import {useCart} from "@/context/useCart";
+import type {CartItem as CartItemType} from "@/shared/types";
 import styles from "./CartItem.module.scss";
 
 type CartItemProps = {
     item: CartItemType;
 };
 
-const CartItem = ({ item }: CartItemProps) => {
+const CartItem = ({item}: CartItemProps) => {
     const {increaseQuantity, decreaseQuantity} = useCart();
     const {product, quantity} = item;
     const title = product.name;
@@ -44,7 +44,7 @@ const CartItem = ({ item }: CartItemProps) => {
                         </div>
                     </Group>
 
-                    <Group gap="sm" wrap="nowrap" style={{ flex: 1 }} justify={"flex-end"} >
+                    <Group gap="sm" wrap="nowrap" style={{flex: 1}} justify={"flex-end"}>
                         <ActionIcon
                             variant="light"
                             color="gray"
@@ -52,7 +52,7 @@ const CartItem = ({ item }: CartItemProps) => {
                                 decreaseQuantity(product.id)
                             }
                         >
-                            <IconMinus size={18} />
+                            <IconMinus size={18}/>
                         </ActionIcon>
 
                         <Text size="xl">{quantity}</Text>
@@ -64,11 +64,11 @@ const CartItem = ({ item }: CartItemProps) => {
                                 increaseQuantity(product.id)
                             }
                         >
-                            <IconPlus size={18} />
+                            <IconPlus size={18}/>
                         </ActionIcon>
                     </Group>
                 </Group>
-                <Divider ml={80} />
+                <Divider ml={80}/>
             </Stack>
         </div>
     );

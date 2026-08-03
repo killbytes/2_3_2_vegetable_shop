@@ -1,9 +1,9 @@
 import {useState} from "react";
 import {Button, Card, Group, Image, Text, ActionIcon, Stack, Center,} from "@mantine/core";
 import {IconMinus, IconPlus, IconShoppingCart} from "@tabler/icons-react";
-import type {Product} from "@/shared/types/Product";
+import type {Product} from "../../shared/types/Product";
 import styles from "./ProductCard.module.scss";
-import { useCart } from "@/context/useCart";
+import {useCart} from "@/context/useCart";
 
 type ProductCardProps = {
     product: Product;
@@ -13,7 +13,7 @@ const ProductCard = ({product}: ProductCardProps) => {
     const [count, setCount] = useState(1);
     const increase = () => setCount((prev) => prev + 1);
     const decrease = () => setCount((prev) => (prev > 1 ? prev - 1 : 1));
-    const { addToCart } = useCart();
+    const {addToCart} = useCart();
     const title = product.name;
     const [name, weight] = title.split(" - ");
     return (
@@ -81,7 +81,7 @@ const ProductCard = ({product}: ProductCardProps) => {
                         radius="md"
                         color="green"
                         variant="light"
-                        rightSection={<IconShoppingCart size={18} />}
+                        rightSection={<IconShoppingCart size={18}/>}
                         styles={{
                             root: {
                                 flex: 1,
