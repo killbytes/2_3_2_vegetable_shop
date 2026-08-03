@@ -10,7 +10,6 @@ const Cart = () => {
         totalQuantity,
     } = useCart();
 
-    console.log("totalQuantity:", totalQuantity);
     return (
         <Popup content={<CartPopup/>}>
             <Button
