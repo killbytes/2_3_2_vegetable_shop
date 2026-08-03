@@ -9,7 +9,7 @@ const ProductList = () => {
     const {data: products, loading, error} = useFetch<Product[]>(getProducts);
 
     if (loading) {
-        return <Loader/>;
+        return <Loader data-testid="loader"/>;
     }
     if (error) {
         return (

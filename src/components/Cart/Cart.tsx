@@ -10,10 +10,11 @@ const Cart = () => {
         totalQuantity,
     } = useCart();
 
-    console.log(totalQuantity)
+    console.log("totalQuantity:", totalQuantity);
     return (
         <Popup content={<CartPopup/>}>
             <Button
+                aria-label={`Cart (${totalQuantity})`}
                 color="green"
                 rightSection={<IconShoppingCart size={18}/>}
             >
